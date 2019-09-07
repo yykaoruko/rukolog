@@ -7,7 +7,8 @@
     "gen:c": "hygen init component",
     "lint": "vue-cli-service lint",
     "lint:script": "vue-cli-service lint . --ext .vue,.ts,.js",
-    "lint:script:nofix": "vue-cli-service lint . --ext .vue,.ts,.js --no-fix"
+    "lint:script:nofix": "vue-cli-service lint . --ext .vue,.ts,.js --no-fix",
+    "test:unit": "vue-cli-service test:unit --config ./jest.config.js"
   },
   "main": "index.js",
   "dependencies": {
@@ -17,14 +18,19 @@
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.2.6",
+    "@types/jest": "^24.0.18",
     "@typescript-eslint/parser": "^2.1.0",
     "@vue/cli-plugin-eslint": "^3.11.0",
+    "@vue/cli-plugin-unit-jest": "^3.11.0",
     "@vue/eslint-config-prettier": "^5.0.0",
     "@vue/eslint-config-typescript": "^4.0.0",
+    "@vue/test-utils": "^1.0.0-beta.29",
     "eslint": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-vue": "^5.2.3",
     "hygen": "^4.0.9",
+    "jest": "^24.9.0",
+    "ts-jest": "24.0.2",
     "typescript": "3.5.3"
   },
   "license": "MIT",

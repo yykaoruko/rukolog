@@ -15,16 +15,14 @@
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "./app/*"
-      ],
       "@/*": [
         "./app/*"
       ]
     },
     "types": [
       "@types/node",
-      "@nuxt/types"
+      "@nuxt/types",
+      "@types/jest"
     ]
   },
   "include": ["app/**/*.vue", "app/**/*.ts"],
