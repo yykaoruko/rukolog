@@ -1,20 +1,32 @@
 {
   "name": "rukolog",
   "version": "1.0.0",
-  "main": "index.js",
-  "repository": "ssh://git@github.com/yykaoruko/rukolog.git",
   "author": "yykaoruko",
-  "license": "MIT",
   "scripts": {
     "dev": "nuxt-ts",
-    "gen:c": "hygen init component"
+    "gen:c": "hygen init component",
+    "lint": "vue-cli-service lint",
+    "lint:script": "vue-cli-service lint . --ext .vue,.ts,.js",
+    "lint:script:nofix": "vue-cli-service lint . --ext .vue,.ts,.js --no-fix"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@nuxt/typescript-runtime": "^0.1.5",
+    "@vue/cli-service": "^3.11.0",
+    "nuxt": "^2.9.2"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.2.6",
-    "hygen": "^4.0.9"
+    "@typescript-eslint/parser": "^2.1.0",
+    "@vue/cli-plugin-eslint": "^3.11.0",
+    "@vue/eslint-config-prettier": "^5.0.0",
+    "@vue/eslint-config-typescript": "^4.0.0",
+    "eslint": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-vue": "^5.2.3",
+    "hygen": "^4.0.9",
+    "typescript": "3.5.3"
   },
-  "dependencies": {
-    "@nuxt/typescript-runtime": "^0.1.5",
-    "nuxt": "^2.9.2"
-  }
+  "license": "MIT",
+  "repository": "ssh://git@github.com/yykaoruko/rukolog.git"
 }
