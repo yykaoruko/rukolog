@@ -5,10 +5,12 @@
   "scripts": {
     "dev": "nuxt-ts",
     "gen:c": "hygen init component",
+    "gen:l": "hygen init log",
     "lint": "vue-cli-service lint",
     "lint:script": "vue-cli-service lint . --ext .vue,.ts,.js",
     "lint:script:nofix": "vue-cli-service lint . --ext .vue,.ts,.js --no-fix",
-    "test:unit": "vue-cli-service test:unit --config ./jest.config.js"
+    "test:unit": "vue-cli-service test:unit --config ./jest.config.js",
+    "md": "processmd ./app/contents/logs/**.md --stdout --outputDir ./app/contents/dist --summaryOutput ./app/contents/dist/summary.json"
   },
   "main": "index.js",
   "dependencies": {
@@ -30,6 +32,7 @@
     "eslint-plugin-vue": "^5.2.3",
     "hygen": "^4.0.9",
     "jest": "^24.9.0",
+    "processmd": "^4.4.2",
     "ts-jest": "24.0.2",
     "typescript": "3.5.3"
   },
