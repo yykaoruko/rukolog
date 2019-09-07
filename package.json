@@ -4,5 +4,15 @@
   "main": "index.js",
   "repository": "ssh://git@github.com/yykaoruko/rukolog.git",
   "author": "yykaoruko",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "dev": "nuxt-ts"
+  },
+  "devDependencies": {
+    "@nuxt/typescript-build": "^0.2.6",
+    "nuxt": "^2.9.2"
+  },
+  "dependencies": {
+    "@nuxt/typescript-runtime": "^0.1.5"
+  }
 }
