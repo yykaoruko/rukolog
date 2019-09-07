@@ -6,10 +6,12 @@
   "author": "yykaoruko",
   "license": "MIT",
   "scripts": {
-    "dev": "nuxt-ts"
+    "dev": "nuxt-ts",
+    "gen:c": "hygen init component"
   },
   "devDependencies": {
-    "@nuxt/typescript-build": "^0.2.6"
+    "@nuxt/typescript-build": "^0.2.6",
+    "hygen": "^4.0.9"
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^0.1.5",
