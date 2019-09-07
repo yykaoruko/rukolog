@@ -8,6 +8,10 @@ const config: Configuration = {
     typeCheck: true,
     ignoreNotFoundWarnings: true,
   },
+  modules: ['@nuxtjs/style-resources'],
+  styleResources: {
+    scss: ['@/assets/styles/_variables.scss'],
+  },
 };
 
 export default config;

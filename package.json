@@ -11,6 +11,7 @@
     "lint:script": "vue-cli-service lint . --ext .vue,.ts,.js",
     "lint:script:staged": "vue-cli-service lint . --ext .vue,.ts,.js",
     "lint:script:nofix": "vue-cli-service lint . --ext .vue,.ts,.js --no-fix",
+    "lint:style": "vue-cli-service lint:style app/**/*.{css,scss} app/layouts/**/*.vue app/pages/**/*.vue app/components/**/*.vue",
     "test:unit": "vue-cli-service test:unit --config ./jest.config.js",
     "test:unit:ci": "vue-cli-service test:unit --config ./jest.config.js --ci --maxWorkers=2",
     "md": "processmd ./app/contents/logs/**.md --stdout --outputDir ./app/contents/dist --summaryOutput ./app/contents/dist/summary.json"
@@ -22,7 +23,9 @@
     "nuxt": "^2.9.2"
   },
   "devDependencies": {
+    "@ascendancyy/vue-cli-plugin-stylelint": "^1.1.2",
     "@nuxt/typescript-build": "^0.2.6",
+    "@nuxtjs/style-resources": "^1.0.0",
     "@types/jest": "^24.0.18",
     "@typescript-eslint/parser": "^2.1.0",
     "@vue/cli-plugin-eslint": "^3.11.0",
@@ -37,7 +40,14 @@
     "hygen": "^4.0.9",
     "jest": "^24.9.0",
     "lint-staged": "^9.2.5",
+    "node-sass": "^4.12.0",
     "processmd": "^4.4.2",
+    "sass-loader": "^8.0.0",
+    "stylelint": "^10.1.0",
+    "stylelint-config-property-sort-order-smacss": "^5.0.0",
+    "stylelint-config-recommended": "^2.2.0",
+    "stylelint-order": "^3.1.0",
+    "stylelint-scss": "^3.10.1",
     "ts-jest": "24.0.2",
     "typescript": "3.5.3"
   },
