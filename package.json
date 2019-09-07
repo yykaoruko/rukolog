@@ -8,8 +8,10 @@
     "gen:l": "hygen init log",
     "lint": "vue-cli-service lint",
     "lint:script": "vue-cli-service lint . --ext .vue,.ts,.js",
+    "lint:script:staged": "vue-cli-service lint . --ext .vue,.ts,.js",
     "lint:script:nofix": "vue-cli-service lint . --ext .vue,.ts,.js --no-fix",
     "test:unit": "vue-cli-service test:unit --config ./jest.config.js",
+    "test:unit:ci": "vue-cli-service test:unit --config ./jest.config.js --ci --maxWorkers=2",
     "md": "processmd ./app/contents/logs/**.md --stdout --outputDir ./app/contents/dist --summaryOutput ./app/contents/dist/summary.json"
   },
   "main": "index.js",
@@ -30,11 +32,24 @@
     "eslint": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-vue": "^5.2.3",
+    "husky": "^3.0.5",
     "hygen": "^4.0.9",
     "jest": "^24.9.0",
+    "lint-staged": "^9.2.5",
     "processmd": "^4.4.2",
     "ts-jest": "24.0.2",
     "typescript": "3.5.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,vue}": [
+      "yarn lint:script:staged",
+      "git add"
+    ]
   },
   "license": "MIT",
   "repository": "ssh://git@github.com/yykaoruko/rukolog.git"
