@@ -9,10 +9,10 @@
     "dev": "nuxt-ts"
   },
   "devDependencies": {
-    "@nuxt/typescript-build": "^0.2.6",
-    "nuxt": "^2.9.2"
+    "@nuxt/typescript-build": "^0.2.6"
   },
   "dependencies": {
-    "@nuxt/typescript-runtime": "^0.1.5"
+    "@nuxt/typescript-runtime": "^0.1.5",
+    "nuxt": "^2.9.2"
   }
 }
