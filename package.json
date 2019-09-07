@@ -4,6 +4,7 @@
   "author": "yykaoruko",
   "scripts": {
     "dev": "nuxt-ts",
+    "generate": "nuxt-ts generate",
     "gen:c": "hygen init component",
     "gen:l": "hygen init log",
     "lint": "vue-cli-service lint",
