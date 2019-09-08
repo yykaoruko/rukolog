@@ -12,6 +12,7 @@ const config: Configuration = {
   styleResources: {
     scss: ['@/assets/styles/_variables.scss'],
   },
+  css: ['@/assets/styles/style.scss'],
   head: {
     title: 'RUKOLOG',
     meta: [

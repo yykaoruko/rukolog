@@ -1,0 +1,10 @@
+@charset 'utf-8';
+@import '../../../node_modules/bootstrap/dist/css/bootstrap-reboot.min.css';
+@import '_variables';
+
+html {
+  background: $color-base;
+}
+body {
+  font-family: 'Noto Sans JP', cursive;
+}
