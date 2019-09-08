@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LogTitle mount snapshot 1`] = `
+<h2
+  class="log-title"
+>
+  
+  title
+
+</h2>
+`;
