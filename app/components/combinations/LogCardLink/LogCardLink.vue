@@ -4,7 +4,7 @@
       <log-title :title="title" />
       <app-date :datetime="datetime" />
       <log-description :text="description" />
-      <log-tag-list :tags="tags" />
+      <log-tag-list v-if="tags.length > 0" :tags="tags" />
     </div>
   </nuxt-link>
 </template>
@@ -38,7 +38,7 @@ export default Vue.extend({
     },
     tags: {
       type: Array as PropType<string[]>,
-      required: true,
+      default: [],
     },
     to: {
       type: String,
