@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LogCardLink mount snapshot 1`] = `
+<a
+  class="log-card-link"
+>
+  <div
+    class="log-card-link__wrap"
+  >
+    <log-title-stub
+      title="title"
+    />
+     
+    <app-date-stub
+      datetime="2019-10-07"
+    />
+     
+    <log-description-stub
+      text=""
+    />
+     
+    <log-tag-list-stub
+      tags="hoge"
+    />
+  </div>
+</a>
+`;

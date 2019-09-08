@@ -19,7 +19,7 @@ export default Vue.extend({
   props: {
     tags: {
       type: Array as PropType<string[]>,
-      required: true,
+      default: true,
     },
   },
 });
