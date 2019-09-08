@@ -6,5 +6,7 @@ html {
   background: $color-base;
 }
 body {
+  background: inherit;
+  color: $color-text;
   font-family: 'Noto Sans JP', cursive;
 }

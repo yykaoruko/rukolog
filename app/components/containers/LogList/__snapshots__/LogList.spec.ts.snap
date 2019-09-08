@@ -5,11 +5,20 @@ exports[`LogList mount snapshot 1`] = `
   class="log-list"
 >
   <logcardlink-stub
+    class="log-list__item"
     datetime="2019-09-08"
     description=""
-    tags=""
-    title="テスト"
+    tags="aa,nb"
+    title="今週の振り返り"
     to="/logs/2019-09-08"
+  />
+  <logcardlink-stub
+    class="log-list__item"
+    datetime="2019-09-07"
+    description=""
+    tags="aa,nb"
+    title="今週の振り返り"
+    to="/logs/2019-09-07"
   />
 </div>
 `;

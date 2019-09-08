@@ -1,6 +1,6 @@
 <template>
   <div class="app-markdown">
-    <div v-html="body" />
+    <div class="app-markdown__body" v-html="body" />
   </div>
 </template>
 
@@ -20,5 +20,16 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .app-markdown {
   color: inherit;
+}
+.app-markdown__body {
+  margin: 16px auto;
+}
+.app-markdown__body /deep/ {
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-size: 1.2rem;
+  }
 }
 </style>

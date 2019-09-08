@@ -4,7 +4,9 @@ exports[`AppMarkdown mount snapshot 1`] = `
 <div
   class="app-markdown"
 >
-  <div>
+  <div
+    class="app-markdown__body"
+  >
     body
   </div>
 </div>

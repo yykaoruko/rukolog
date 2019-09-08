@@ -27,6 +27,12 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .log-tag-list {
-  color: inherit;
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+}
+.log-tag-list__item {
+  margin: 0 4px 0 0;
 }
 </style>

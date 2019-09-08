@@ -3,24 +3,24 @@
 exports[`LogCardLink mount snapshot 1`] = `
 <a
   class="log-card-link"
+  tags="hoge"
 >
   <div
     class="log-card-link__wrap"
   >
     <log-title-stub
+      class="log-card-link__wrap__title"
       title="title"
     />
      
     <app-date-stub
+      class="log-card-link__wrap__date"
       datetime="2019-10-07"
     />
      
     <log-description-stub
+      class="log-card-link__wrap__description"
       text=""
-    />
-     
-    <log-tag-list-stub
-      tags="hoge"
     />
   </div>
 </a>

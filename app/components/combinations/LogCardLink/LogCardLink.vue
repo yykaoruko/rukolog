@@ -1,10 +1,12 @@
 <template>
   <nuxt-link :to="to" class="log-card-link">
     <div class="log-card-link__wrap">
-      <log-title :title="title" />
-      <app-date :datetime="datetime" />
-      <log-description :text="description" />
-      <log-tag-list v-if="tags.length > 0" :tags="tags" />
+      <log-title class="log-card-link__wrap__title" :title="title" />
+      <app-date class="log-card-link__wrap__date" :datetime="datetime" />
+      <log-description
+        class="log-card-link__wrap__description"
+        :text="description"
+      />
     </div>
   </nuxt-link>
 </template>
@@ -14,14 +16,12 @@ import Vue, { PropType } from 'vue';
 import AppDate from '@/components/basics/AppDate/AppDate.vue';
 import LogDescription from '@/components/basics/LogDescription/LogDescription.vue';
 import LogTitle from '@/components/basics/LogTitle/LogTitle.vue';
-import LogTagList from '@/components/combinations/LogTagList/LogTagList.vue';
 export default Vue.extend({
   name: 'LogCardLink',
   components: {
     AppDate,
     LogDescription,
     LogTitle,
-    LogTagList,
   },
   props: {
     datetime: {
@@ -36,10 +36,6 @@ export default Vue.extend({
       type: String,
       required: true,
     },
-    tags: {
-      type: Array as PropType<string[]>,
-      default: [],
-    },
     to: {
       type: String,
       required: true,
@@ -51,6 +47,24 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .log-card-link {
   display: block;
-  color: inherit;
+  border-left: 4px solid $color-sub;
+  text-decoration: none;
+}
+.log-card-link__wrap {
+  padding: 16px 24px;
+  transition: all 0.2s;
+  background: $color-base;
+  &:hover {
+    background: $color-accent;
+  }
+}
+.log-card-link__wrap__title {
+  color: $color-text;
+}
+.log-card-link__wrap__date {
+  color: $color-text;
+}
+.log-card-link__wrap__description {
+  display: none;
 }
 </style>

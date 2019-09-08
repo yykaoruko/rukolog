@@ -1,7 +1,11 @@
 <template>
   <div class="log-list">
     <template v-for="(item, index) in logList">
-      <LogCardLink :key="index" v-bind="logCardLinkProps(item)" />
+      <LogCardLink
+        :key="index"
+        class="log-list__item"
+        v-bind="logCardLinkProps(item)"
+      />
     </template>
   </div>
 </template>
@@ -65,5 +69,8 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .log-list {
   color: inherit;
+}
+.log-list__item {
+  margin: 16px auto 0;
 }
 </style>

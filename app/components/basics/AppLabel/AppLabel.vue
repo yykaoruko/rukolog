@@ -22,6 +22,13 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .app-label {
-  color: inherit;
+  display: inline-block;
+  width: 100%;
+  min-width: 30px;
+  padding: 2px 8px;
+  border-radius: 8px;
+  background: $color-gray;
+  color: $color-base;
+  font-size: 0.8rem;
 }
 </style>
