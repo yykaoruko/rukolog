@@ -14,7 +14,7 @@
     "lint:style": "vue-cli-service lint:style app/**/*.{css,scss} app/layouts/**/*.vue app/pages/**/*.vue app/components/**/*.vue",
     "test:unit": "vue-cli-service test:unit --config ./jest.config.js",
     "test:unit:ci": "vue-cli-service test:unit --config ./jest.config.js --ci --maxWorkers=2",
-    "md": "processmd ./app/contents/logs/**.md --stdout --outputDir ./app/contents/dist --summaryOutput ./app/contents/dist/summary.json"
+    "md": "processmd ./app/contents/logs/markdown/**.md --stdout --outputDir ./app/contents/dist --summaryOutput ./app/contents/dist/summary.json"
   },
   "main": "index.js",
   "dependencies": {
