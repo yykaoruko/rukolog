@@ -8,7 +8,9 @@ describe('AppDate', () => {
 
     beforeEach(() => {
       wrapper = shallowMount(AppDate, {
-        propsData: {},
+        propsData: {
+          datetime: '2019-10-07',
+        },
       });
     });
 
