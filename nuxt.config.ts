@@ -1,9 +1,23 @@
 import { Configuration } from '@nuxt/types';
+const { sourceFileArray } = require('./app/contents/dist/summary.json');
+
+// const reg = /\.\/app\/contents\/logs\/markdown\/(\d{4}-\d{2}-\d{2})\.md/;
+const reg = /\d{4}-\d{2}-\d{2}/g;
+const generateDynamicRoutes = (callback: any) => {
+  const routes = sourceFileArray.map((filename: string) => {
+    const match = filename.match(reg);
+    if (match) return `logs/${match[0]}`;
+  });
+  callback(null, routes);
+};
 
 const config: Configuration = {
   mode: 'universal',
   srcDir: 'app/',
   buildModules: ['@nuxt/typescript-build'],
+  generate: {
+    routes: generateDynamicRoutes,
+  },
   typescript: {
     typeCheck: true,
     ignoreNotFoundWarnings: true,
