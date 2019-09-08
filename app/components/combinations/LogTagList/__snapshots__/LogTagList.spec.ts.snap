@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LogTagList mount snapshot 1`] = `
+<ul
+  class="log-tag-list"
+>
+  <li
+    class="log-tag-list__item"
+  >
+    <app-label-stub
+      label="hoge"
+    />
+  </li>
+  <li
+    class="log-tag-list__item"
+  >
+    <app-label-stub
+      label="huga"
+    />
+  </li>
+</ul>
+`;
