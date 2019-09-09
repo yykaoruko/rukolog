@@ -48,6 +48,7 @@ export default Vue.extend({
 .log-card-link {
   display: block;
   border-left: 4px solid $color-sub;
+  color: $color-sub;
   text-decoration: none;
 }
 .log-card-link__wrap {
