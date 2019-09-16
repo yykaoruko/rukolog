@@ -1,4 +1,4 @@
 [submodule "app/contents/logs"]
 	path = app/contents/logs
-	url = git@github.com:yykaoruko/my-log.git
+	url = git://github.com/yykaoruko/my-log.git
 	branch = master
