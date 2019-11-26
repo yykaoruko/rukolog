@@ -1,4 +1,4 @@
-name: create pull request
+name: Create PR
 
 on: repository_dispatch
 jobs:
@@ -7,10 +7,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
+    - name: Checkout branch
+      uses: actions/checkout@v1
+    - name: Update submodule
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        git submodule foreach git pull origin master
+        git add .
+        git commit -m "update submodule"
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: this is title
+        body: this is body
