@@ -24,7 +24,9 @@ jobs:
         git remote set-url origin https://yykaoruko:${ACCESS_TOKEN}@github.com/yykaoruko/rukolog.git
       
     - name: Update submodule
-      run: git submodule foreach git pull origin master
+      run: |
+        git submodule init
+        git submodule foreach git pull origin master
 
     - name: Git commit
       run: |
