@@ -7,14 +7,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout master
-      uses: actions/checkout@v1
-      with:
-        ref: remotes/origin/master
-
-    - name: Checkout branch
-      run: git checkout -b feature/schema
-
     - name: Setup git
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
@@ -22,11 +14,20 @@ jobs:
         git config --local user.name yykaoruko
         git config --local user.email yykaoruko@gmail.com
         git remote set-url origin https://yykaoruko:${ACCESS_TOKEN}@github.com/yykaoruko/rukolog.git
+
+    - name: Checkout master
+      uses: actions/checkout@v1
+      with:
+        ref: remotes/origin/master
+
+    - name: Checkout branch
+      run: git checkout -b feature/schema
       
+    - name: Initialuze submodule
+      run: git submodule init
+
     - name: Update submodule
-      run: |
-        git submodule init
-        git submodule foreach git pull origin master
+      run: git submodule foreach git pull origin master
 
     - name: Git commit
       run: |
