@@ -7,13 +7,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout branch
+    - name: Checkout master
       uses: actions/checkout@v1
-    - name: Update submodule
+      with:
+        ref: remotes/origin/master
+
+    - name: Checkout branch
+      run: git checkout -b feature/schema
+
+    - name: Setup git
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run: |
-        git submodule foreach git pull origin master
+        git config --local user.name yykaoruko
+        git config --local user.email yykaoruko@gmail.com
+        git remote set-url origin https://yykaoruko:${ACCESS_TOKEN}@github.com/yykaoruko/rukolog.git
+      
+    - name: Update submodule
+      run: git submodule foreach git pull origin master
+
+    - name: Git commit
+      run: |
         git add .
-        git commit -m "update submodule"
+        git commit -m 'update submodule'
+
+    - name: Git push
+      run: git push origin HEAD
+
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v1
       with:
