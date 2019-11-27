@@ -7,13 +7,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Setup git
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-      run: |
-        git config --local user.name yykaoruko
-        git config --local user.email yykaoruko@gmail.com
-        git remote set-url origin https://yykaoruko:${ACCESS_TOKEN}@github.com/yykaoruko/rukolog.git
 
     - name: Checkout master
       uses: actions/checkout@v1
@@ -22,6 +15,14 @@ jobs:
 
     - name: Checkout branch
       run: git checkout -b feature/schema
+
+    - name: Setup git
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      run: |
+        git config --local user.name yykaoruko
+        git config --local user.email yykaoruko@gmail.com
+        git remote set-url origin https://yykaoruko:${ACCESS_TOKEN}@github.com/yykaoruko/rukolog.git
       
     - name: Initialuze submodule
       run: git submodule init
