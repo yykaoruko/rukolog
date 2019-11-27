@@ -14,7 +14,7 @@ jobs:
         ref: remotes/origin/master
 
     - name: Checkout branch
-      run: git checkout -b feature/schema
+      run: git checkout -b feature/submodule
 
     - name: Setup git
       env:
@@ -32,12 +32,14 @@ jobs:
 
     - name: Git commit
       run: |
-        git status
         git add .
         git commit -m 'update submodule'
+        git status
 
-    - name: Git push
-      run: git push origin HEAD
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v1
