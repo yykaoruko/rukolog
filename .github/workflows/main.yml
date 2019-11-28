@@ -50,5 +50,5 @@ jobs:
         curl -X POST
         -H "Authorization: token ${GITHUB_ACCESS_TOKEN}"
         -H "Accept: application/vnd.github.everest-preview+json"
-        -d "{"title": "update submodule", "head": "feature/submodule", "base": "master"}"
+        -d "{\"title\": "update submodule\", \"head\": \"feature/submodule\", \"base\": \"master\"}"
         "https://api.github.com/repos/yykaoruko/rukolog/pulls"
