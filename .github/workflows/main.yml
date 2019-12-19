@@ -44,9 +44,10 @@ jobs:
 
     - name: Git commit
       run: |
-        git add .
-        git commit -m 'update submodule'
         git status
+        # git add .
+        # git commit -m 'update submodule'
+        # git status
 
     - name: Push changes
       uses: ad-m/github-push-action@master
