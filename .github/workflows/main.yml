@@ -9,6 +9,8 @@ jobs:
     steps:
 
     - name: Checkout master
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run: |
         git clone https://yykaoruko:${ACCESS_TOKEN}@github.com/yykaoruko/rukolog.git
         git checkout master
