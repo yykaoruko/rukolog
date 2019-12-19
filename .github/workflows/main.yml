@@ -30,15 +30,17 @@ jobs:
     #     git submodule foreach git pull origin master
     #     git status
 
-    - name: Checkout private tools
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        ref: feature/submodule
+
+    - name: Checkout submodule
       uses: actions/checkout@v2
       with:
         repository: yykaoruko/my-log
         token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
         path: app/contents/logs
-
-    - name: Checkout branch
-      run: git checkout -b feature/submodule
 
     - name: Git commit
       run: |
