@@ -12,6 +12,9 @@ jobs:
       uses: actions/checkout@v1
       with:
         ref: remotes/origin/master
+      shell: bash
+      run: |
+        git status
 
     - name: Checkout branch
       run: git checkout -b feature/submodule
