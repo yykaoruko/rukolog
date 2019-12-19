@@ -10,6 +10,7 @@ jobs:
 
     - name: Setup git
       run: |
+        git init
         git config --global user.name yykaoruko
         git config --global user.email yykaoruko@gmail.com
 
@@ -18,7 +19,7 @@ jobs:
         GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
       run: |
         git clone https://yykaoruko:${GITHUB_ACCESS_TOKEN}@github.com/yykaoruko/rukolog.git
-        git status
+        cd rukolog
 
     - name: Checkout branch
       run: git checkout -b feature/submodule
