@@ -9,11 +9,10 @@ jobs:
     steps:
 
     - name: Checkout master
-      uses: actions/checkout@v1
-      with:
-        ref: remotes/origin/master
       run: |
-        git status
+        git clone https://yykaoruko:${ACCESS_TOKEN}@github.com/yykaoruko/rukolog.git
+        git checkout master
+        git pull origin master
 
     - name: Checkout branch
       run: git checkout -b feature/submodule
@@ -24,7 +23,6 @@ jobs:
       run: |
         git config --local user.name yykaoruko
         git config --local user.email yykaoruko@gmail.com
-        git remote set-url origin https://yykaoruko:${ACCESS_TOKEN}@github.com/yykaoruko/rukolog.git
       
     - name: Update submodule
       run: |
