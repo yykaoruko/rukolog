@@ -13,7 +13,6 @@ jobs:
         # git init
         git config --global user.name yykaoruko
         git config --global user.email yykaoruko@gmail.com
-        ls
 
     # - name: Checkout master
     #   env:
@@ -32,6 +31,8 @@ jobs:
 
     - name: Update submodule
       run: |
+        pwd
+        ls
         git submodule update -i
         git submodule foreach git pull origin master
         git status
