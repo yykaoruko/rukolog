@@ -44,10 +44,10 @@ jobs:
 
     - name: Create Pull Request
       env:
-        GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: >
         curl -X POST
-        -H "Authorization: token ${GITHUB_ACCESS_TOKEN}"
+        -H "Authorization: token ${GITHUB_TOKEN}"
         -H "Accept: application/vnd.github.everest-preview+json"
         -d "{\"title\": \"update submodule\", \"head\": \"feature/submodule\", \"base\": \"master\"}"
         "https://api.github.com/repos/yykaoruko/rukolog/pulls"
