@@ -10,7 +10,6 @@ jobs:
 
     - name: Setup git
       run: |
-        # git init
         git config --global user.name yykaoruko
         git config --global user.email yykaoruko@gmail.com
 
@@ -23,17 +22,17 @@ jobs:
       run: |
         git checkout -b feature/submodule
 
-    # - name: Checkout private tools
-    #   uses: actions/checkout@v2
-    #   with:
-    #     repository: yykaoruko/my-log
-    #     token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
-    #     path: app/contents/logs
+    - name: Checkout private tools
+      uses: actions/checkout@v2
+      with:
+        repository: yykaoruko/my-log
+        token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
+        path: app/contents/logs
 
     - name: Git commit
       run: |
-        # git add .
-        # git commit -m 'update submodule'
+        git add .
+        git commit -m 'update submodule'
         git status
 
     - name: Push changes
