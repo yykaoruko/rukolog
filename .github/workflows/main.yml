@@ -13,6 +13,7 @@ jobs:
         # git init
         git config --global user.name yykaoruko
         git config --global user.email yykaoruko@gmail.com
+        git log
 
     # - name: Checkout master
     #   env:
@@ -23,17 +24,17 @@ jobs:
 
     # - name: Checkout branch
     #   run: git checkout -b feature/submodule
-      
-    # - name: Update submodule
-    #   run: |
-    #     git submodule update -i
-    #     git submodule foreach git pull origin master
-    #     git status
 
     - name: Checkout
       uses: actions/checkout@v2
       with:
         ref: feature/submodule
+
+    - name: Update submodule
+      run: |
+        git submodule update -i
+        git submodule foreach git pull origin master
+        git status
 
     # - name: Checkout submodule
     #   uses: actions/checkout@v2
