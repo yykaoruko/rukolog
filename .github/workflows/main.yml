@@ -31,18 +31,9 @@ jobs:
 
     - name: Update submodule
       run: |
-        pwd
-        ls al
-        # git submodule update -i
-        # git submodule foreach git pull origin master
-        # git status
-
-    # - name: Checkout submodule
-    #   uses: actions/checkout@v2
-    #   with:
-    #     repository: yykaoruko/my-log
-    #     token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
-    #     path: app/contents/logs
+        git submodule update -i
+        git submodule foreach git pull origin master
+        git status
 
     - name: Git commit
       run: |
