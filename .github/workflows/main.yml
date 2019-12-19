@@ -30,7 +30,10 @@ jobs:
         ref: feature/submodule
 
     - name: Update submodule
+      env:
+        GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
       run: |
+        git submodule add https://yykaoruko:${GITHUB_ACCESS_TOKEN}@github.com/yykaoruko/my-log.git
         git submodule update -i
         git submodule foreach git pull origin master
         git status
