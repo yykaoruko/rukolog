@@ -10,9 +10,9 @@ jobs:
 
     - name: Checkout master
       env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
       run: |
-        git clone https://yykaoruko:${ACCESS_TOKEN}@github.com/yykaoruko/rukolog.git
+        git clone https://yykaoruko:${GITHUB_ACCESS_TOKEN}@github.com/yykaoruko/rukolog.git
         git checkout master
         git pull origin master
 
@@ -20,8 +20,6 @@ jobs:
       run: git checkout -b feature/submodule
 
     - name: Setup git
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run: |
         git config --local user.name yykaoruko
         git config --local user.email yykaoruko@gmail.com
