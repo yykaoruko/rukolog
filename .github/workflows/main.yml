@@ -32,10 +32,10 @@ jobs:
     - name: Update submodule
       run: |
         pwd
-        ls
-        git submodule update -i
-        git submodule foreach git pull origin master
-        git status
+        ls al
+        # git submodule update -i
+        # git submodule foreach git pull origin master
+        # git status
 
     # - name: Checkout submodule
     #   uses: actions/checkout@v2
