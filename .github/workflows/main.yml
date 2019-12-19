@@ -19,8 +19,10 @@ jobs:
         GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
       run: |
         git clone https://yykaoruko:${GITHUB_ACCESS_TOKEN}@github.com/yykaoruko/rukolog.git
-        git checkout master
-        git pull origin master
+        # git fetch origin
+        # git checkout master
+        # git pull origin master
+        git status
 
     - name: Checkout branch
       run: git checkout -b feature/submodule
