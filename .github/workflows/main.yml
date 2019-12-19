@@ -13,7 +13,7 @@ jobs:
         # git init
         git config --global user.name yykaoruko
         git config --global user.email yykaoruko@gmail.com
-        git log
+        ls
 
     # - name: Checkout master
     #   env:
