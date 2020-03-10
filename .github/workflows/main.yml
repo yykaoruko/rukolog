@@ -32,7 +32,7 @@ jobs:
     - name: Git commit
       run: |
         git add .
-        git commit -m 'update submodule'
+        git commit -m 'chore: update submodule'
         git status
 
     - name: Push changes
