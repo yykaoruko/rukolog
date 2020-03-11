@@ -10,7 +10,9 @@ const IndexPage = ({ data, pageContext }) => (
   <Layout>
     <SEO title="Posts" />
     <div className={Styles.posts}>
-      <h2 className={Styles.posts__heading}># {pageContext.tag}</h2>
+      <h2 className={Styles.posts__heading}>
+        <span className={Styles.posts__heading__text}># {pageContext.tag}</span>
+      </h2>
       <Posts posts={data.allMarkdownRemark.edges} />
     </div>
   </Layout>
