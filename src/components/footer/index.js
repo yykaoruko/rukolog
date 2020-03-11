@@ -10,6 +10,7 @@ const Footer = () => (
         className={Styles.footer__sns__link}
         href="https://twitter.com/yykaoruko"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <FontAwesomeIcon icon={faTwitter} size="2x" />
       </a>
@@ -17,6 +18,7 @@ const Footer = () => (
         className={Styles.footer__sns__link}
         href="http://github.com/yykaoruko"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <FontAwesomeIcon icon={faGithub} size="2x" />
       </a>
