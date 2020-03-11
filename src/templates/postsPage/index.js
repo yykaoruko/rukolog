@@ -1,40 +1,46 @@
 import React from "react"
 
-import { Link, graphql } from 'gatsby'
+import { Link, graphql } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
+import Styles from "./index.module.scss"
+import { formatDate } from "../../helpers/date"
 
-const IndexPage = ({ data, pageContext }) => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Posts" />
-    <div>{
-      data.allMarkdownRemark.edges.map(({ node }) => (
-        <article key={node.id}>
-          <h1>
+    <div className={Styles.posts}>
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <article key={node.id} className={Styles.posts__post}>
+          <h1 className={Styles.posts__post__heading}>
             <Link to={`/posts/${node.frontmatter.slug}`}>
               {node.frontmatter.title}
             </Link>
           </h1>
-          <p>{node.frontmatter.description}</p>
-          <time>{node.frontmatter.date}</time>
+          <p className={Styles.posts__post__description}>
+            {node.frontmatter.description}
+          </p>
+          <time className={Styles.posts__post__date}>
+            {formatDate(node.frontmatter.date)}
+          </time>
+          <ul className={Styles.posts__post__tags}>
+            {node.frontmatter.tags.map(tag => (
+              <li key={tag} className={Styles.posts__post__tags__tag}>
+                {tag}
+              </li>
+            ))}
+          </ul>
         </article>
-      ))
-    }</div>
-    <ul>{
-      Array.from({ length: pageContext.numPages }).map((_, i) => (
-        <li>
-          <Link key={i + 1} to={`/${i + 1}`}>{i + 1}</Link>
-        </li>
-      ))
-    }</ul>
+      ))}
+    </div>
   </Layout>
 )
 
 export default IndexPage
 
 export const pageQuery = graphql`
-  query ($skip: Int!, $limit: Int!) {
-    allMarkdownRemark (
+  query($skip: Int!, $limit: Int!) {
+    allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit
       skip: $skip
@@ -47,9 +53,10 @@ export const pageQuery = graphql`
             slug
             description
             date
+            tags
           }
         }
       }
     }
   }
-`;
+`

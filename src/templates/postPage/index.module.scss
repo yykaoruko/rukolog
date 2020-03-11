@@ -1,0 +1,76 @@
+@import "../../styles/variables";
+
+.post {
+  margin: 0;
+  background: $color-sub;
+}
+
+.post__wrap {
+  margin: auto;
+  padding: 32px 16px;
+  width: 100%;
+  max-width: 796px;
+}
+
+.post__wrap__heading {
+  margin: 0 0 8px;
+  color: $color-dark;
+  font-size: 1.5rem;
+}
+
+.post__wrap__date {
+  margin: 0 8px 8px 0;
+  color: $color-dark;
+  font-size: 0.9rem;
+}
+
+.post__wrap__tags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.post__wrap__tags__tag {
+  margin: 0 4px;
+  list-style-type: none;
+  color: $color-accent;
+  font-size: 0.9rem;
+  &::before {
+    content: '#';
+  }
+}
+
+.wrap {
+  margin: auto;
+  padding: 1px 16px;
+  width: 100%;
+  max-width: 796px;
+}
+
+.markdown {
+  margin: 0 0 48px;
+  padding: 16px 0 48px;
+  border-bottom: 1px solid $color-border;
+  line-height: 2em;
+
+  h1 {
+    margin: 24px auto 16px;
+    padding: 0 0 4px;
+    border-bottom: 2px solid $color-border;
+    font-size: 1.3rem;
+  }
+  h2 {
+    margin: 24px auto 16px;
+    font-size: 1.2rem;
+  }
+  h3 {
+    margin: 24px auto 16px;
+    font-size: 1.2rem;
+  }
+  
+  blockquote {
+    padding: 25px 36px;
+    background: #f7f9f9;
+  }
+}

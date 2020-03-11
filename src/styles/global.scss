@@ -1,0 +1,19 @@
+@import 'bootstrap/dist/css/bootstrap-reboot';
+@import './variables';
+
+html {
+  background: $color-white;
+}
+
+body {
+  background: none;
+  color: $color-dark;
+}
+
+a {
+  color: $color-accent;
+  transition: color 0.2s;
+  &:hover {
+    color: $color-dark;
+  }
+}

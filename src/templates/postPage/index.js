@@ -1,28 +1,48 @@
 import React from "react"
 
-import { Link, graphql } from 'gatsby'
+import { Link, graphql } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
+import Styles from "./index.module.scss"
+import { formatDate } from "../../helpers/date"
 
 const PostPage = ({ data }) => (
   <Layout>
     <SEO title="Post" />
     <div>
-      <h1>{data.markdownRemark.frontmatter.title}</h1>
-      <time>{data.markdownRemark.frontmatter.date}</time>
-      <p>{data.markdownRemark.frontmatter.tags}</p>
-      <p>{data.markdownRemark.frontmatter.slug}</p>
-      <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+      <div className={Styles.post}>
+        <div className={Styles.post__wrap}>
+          <h1 className={Styles.post__wrap__heading}>
+            {data.markdownRemark.frontmatter.title}
+          </h1>
+          <time className={Styles.post__wrap__date}>
+            {formatDate(data.markdownRemark.frontmatter.date)}
+          </time>
+          <ul className={Styles.post__wrap__tags}>
+            {data.markdownRemark.frontmatter.tags.map(tag => (
+              <li key={tag} className={Styles.post__wrap__tags__tag}>
+                {tag}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div className={Styles.wrap}>
+        <div
+          className={Styles.markdown}
+          dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+        />
+        <Link to="/">Back to the home</Link>
+      </div>
     </div>
-    <Link to="/">Back to the home</Link>
   </Layout>
 )
 
 export default PostPage
 
 export const pageQuery = graphql`
-  query ($id: String) {
-    markdownRemark(id: {eq: $id}) {
+  query($id: String) {
+    markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
         date
@@ -32,4 +52,4 @@ export const pageQuery = graphql`
       html
     }
   }
-`;
+`
