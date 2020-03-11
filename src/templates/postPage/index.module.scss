@@ -74,4 +74,23 @@
     padding: 25px 36px;
     background: #f7f9f9;
   }
+
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  li {
+    position: relative;
+    padding: 0 0 0 16px;
+    &::before {
+      content: '-';
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 16px;
+      color: $color-sub;
+      text-align: center;
+    }
+  }
 }
