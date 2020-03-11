@@ -8,13 +8,13 @@
 
 .posts__post__heading {
   margin: 0 auto 20px;
-  color: $color-dark;
+  color: $color-font-dark;
   font-size: 1.2rem;
   a {
     color: currentColor;
     transition: color 0.4s;
     &:hover {
-      color: $color-accent;
+      color: $color-sub;
       text-decoration: none;
     }
   }
@@ -22,12 +22,12 @@
 
 .posts__post__description {
   margin: 0 auto 16px;
-  color: $color-dark;
+  color: $color-font-dark;
 }
 
 .posts__post__date {
   margin: 0 8px 8px 0;
-  color: $color-light;
+  color: $color-font-light;
   font-size: 0.9rem;
 }
 
@@ -40,7 +40,7 @@
 
 .posts__post__tags__tag {
   margin: 0 4px 0;
-  color: $color-accent;
+  color: $color-sub;
   font-size: 0.9rem;
   list-style-type: none;
 }

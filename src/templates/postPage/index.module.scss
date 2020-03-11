@@ -2,7 +2,7 @@
 
 .post {
   margin: 0;
-  background: $color-sub;
+  background: $color-highlight;
 }
 
 .post__wrap {
@@ -14,13 +14,13 @@
 
 .post__wrap__heading {
   margin: 0 0 8px;
-  color: $color-dark;
+  color: $color-font-dark;
   font-size: 1.5rem;
 }
 
 .post__wrap__date {
   margin: 0 8px 8px 0;
-  color: $color-dark;
+  color: $color-font-dark;
   font-size: 0.9rem;
 }
 
@@ -34,7 +34,7 @@
 .post__wrap__tags__tag {
   margin: 0 4px;
   list-style-type: none;
-  color: $color-accent;
+  color: $color-sub;
   font-size: 0.9rem;
 }
 
@@ -54,8 +54,12 @@
   h1 {
     margin: 24px auto 16px;
     padding: 0 0 4px;
-    border-bottom: 2px solid $color-border;
+    // border-bottom: 4px solid $color-sub-light;
     font-size: 1.3rem;
+    &::before {
+      content: '◆';
+      margin: 0 6px 0 0;
+    }
   }
   h2 {
     margin: 24px auto 16px;

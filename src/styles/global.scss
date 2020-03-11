@@ -7,13 +7,13 @@ html {
 
 body {
   background: none;
-  color: $color-dark;
+  color: $color-font-dark;
 }
 
 a {
-  color: $color-accent;
+  color: $color-sub;
   transition: color 0.2s;
   &:hover {
-    color: $color-dark;
+    color: $color-font-dark;
   }
 }
