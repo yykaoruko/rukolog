@@ -34,7 +34,7 @@ const PostPage = ({ data }) => (
           className={Styles.markdown}
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
         />
-        <Link to="/">Back to the home</Link>
+        <Link to="/">Back to main page</Link>
       </div>
     </div>
   </Layout>
