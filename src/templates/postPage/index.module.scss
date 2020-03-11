@@ -53,12 +53,8 @@
   h1 {
     margin: 24px auto 16px;
     padding: 0 0 4px;
-    // border-bottom: 4px solid $color-sub-light;
+    border-bottom: 2px solid $color-sub-light;
     font-size: 1.3rem;
-    &::before {
-      content: '◆';
-      margin: 0 6px 0 0;
-    }
   }
   h2 {
     margin: 24px auto 16px;
