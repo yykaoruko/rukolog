@@ -13,6 +13,7 @@ import "../../styles/global.scss"
 import Styles from "./index.module.scss"
 
 import Header from "../header"
+import Footer from "../Footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -35,6 +36,7 @@ const Layout = ({ children }) => {
       </Helmet>
       <Header siteTitle={data.site.siteMetadata.title} />
       <main className={Styles.main}>{children}</main>
+      <Footer />
     </>
   )
 }

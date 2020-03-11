@@ -1,0 +1,24 @@
+@import '../../styles/variables';
+
+.footer {
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.footer__copyright {
+  margin: 8px 0 0;
+  display: block;
+  text-align: center;
+}
+
+.footer__sns {
+  display: flex;
+  justify-content: center;
+}
+
+.footer__sns__link {
+  display: block;
+  margin: 0 4px;
+  padding: 4px;
+  color: $color-main;
+}
