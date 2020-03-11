@@ -5,6 +5,10 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-brands-svg-icons": "^5.12.1",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-fontawesome": "^0.1.9",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
     "gatsby-plugin-manifest": "^2.2.39",
@@ -22,6 +26,7 @@
     "bootstrap": "4.0.0-beta.2",
     "dayjs": "^1.8.22",
     "gatsby-plugin-sass": "^2.1.30",
+    "gatsby-remark-autolink-headers": "^2.1.25",
     "gatsby-remark-prismjs": "^3.3.33",
     "gatsby-transformer-remark": "^2.6.57",
     "node-sass": "^4.13.1",

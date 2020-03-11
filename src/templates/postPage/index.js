@@ -2,6 +2,7 @@ import React from "react"
 
 import { Link, graphql } from "gatsby"
 import Layout from "../../components/layout"
+import TableOfContents from "../../components/tableOfContents"
 import SEO from "../../components/seo"
 import Styles from "./index.module.scss"
 import { formatDate } from "../../helpers/date"
@@ -28,6 +29,7 @@ const PostPage = ({ data }) => (
         </div>
       </div>
       <div className={Styles.wrap}>
+        <TableOfContents contents={data.markdownRemark.tableOfContents} />
         <div
           className={Styles.markdown}
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
@@ -50,6 +52,7 @@ export const pageQuery = graphql`
         slug
       }
       html
+      tableOfContents(absolute: false, maxDepth: 1)
     }
   }
 `
