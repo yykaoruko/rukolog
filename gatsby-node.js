@@ -6,6 +6,7 @@
 
 const path = require("path")
 const { createFilePath } = require("gatsby-source-filesystem")
+const tagPage = path.resolve(`./src/templates/tagPage/index.js`)
 
 // Generate post page
 exports.createPages = async ({ graphql, actions }) => {
@@ -38,6 +39,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const postsEdges = markdownQueryResult.data.allMarkdownRemark.edges
 
+  // generate post page
   postsEdges.forEach((edge, index) => {
     createPage({
       path: `/posts/${edge.node.frontmatter.slug}`,
@@ -48,6 +50,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+  // generate posts page to paginate
   const postsPerPage = 12
   const numPages = Math.ceil(postsEdges.length / postsPerPage)
   Array.from({ length: numPages }).forEach((_, i) => {
@@ -59,6 +62,23 @@ exports.createPages = async ({ graphql, actions }) => {
         skip: i * postsPerPage,
         numPages,
         currentPage: i + 1,
+      },
+    })
+  })
+
+  // generate tag page
+  const allTags = postsEdges
+    .map(edge => edge.node.frontmatter.tags)
+    .reduce((a, c) => {
+      return a.concat(c)
+    }, [])
+  tags = Array.from(new Set(allTags))
+  tags.forEach(tag => {
+    createPage({
+      path: `/tags/${tag}/`,
+      component: tagPage,
+      context: {
+        tag: tag,
       },
     })
   })

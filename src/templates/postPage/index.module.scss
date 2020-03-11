@@ -36,9 +36,6 @@
   list-style-type: none;
   color: $color-accent;
   font-size: 0.9rem;
-  &::before {
-    content: '#';
-  }
 }
 
 .wrap {

@@ -1,0 +1,16 @@
+@import "../../styles/variables";
+
+.posts {
+  margin: auto;
+  padding: 48px 16px;
+  width: 100%;
+  max-width: 796px;
+}
+
+.posts__heading {
+  text-align: center;
+  font-size: 2.3rem;
+  margin: 0 auto 48px;
+  color: $color-light;
+  font-weight: normal;
+}

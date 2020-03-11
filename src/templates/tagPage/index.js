@@ -6,10 +6,11 @@ import SEO from "../../components/seo"
 import Posts from "../../components/posts"
 import Styles from "./index.module.scss"
 
-const IndexPage = ({ data }) => (
+const IndexPage = ({ data, pageContext }) => (
   <Layout>
     <SEO title="Posts" />
     <div className={Styles.posts}>
+      <h2 className={Styles.posts__heading}># {pageContext.tag}</h2>
       <Posts posts={data.allMarkdownRemark.edges} />
     </div>
   </Layout>
@@ -18,11 +19,10 @@ const IndexPage = ({ data }) => (
 export default IndexPage
 
 export const pageQuery = graphql`
-  query($skip: Int!, $limit: Int!) {
+  query($tag: String!) {
     allMarkdownRemark(
+      filter: { frontmatter: { tags: { in: [$tag] } } }
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: $limit
-      skip: $skip
     ) {
       edges {
         node {

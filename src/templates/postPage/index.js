@@ -21,7 +21,7 @@ const PostPage = ({ data }) => (
           <ul className={Styles.post__wrap__tags}>
             {data.markdownRemark.frontmatter.tags.map(tag => (
               <li key={tag} className={Styles.post__wrap__tags__tag}>
-                {tag}
+                <Link to={`/tags/${tag}`}>#{tag}</Link>
               </li>
             ))}
           </ul>
