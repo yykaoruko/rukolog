@@ -8,7 +8,7 @@ import Styles from "./index.module.scss"
 
 const IndexPage = ({ data, pageContext }) => (
   <Layout>
-    <SEO title="Posts" />
+    <SEO title={`#${pageContext.tag}`} />
     <div className={Styles.posts}>
       <h2 className={Styles.posts__heading}>
         <span className={Styles.posts__heading__text}># {pageContext.tag}</span>

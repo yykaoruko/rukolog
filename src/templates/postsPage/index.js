@@ -8,7 +8,7 @@ import Styles from "./index.module.scss"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO title="Posts" />
+    <SEO title="ログ" />
     <div className={Styles.posts}>
       <Posts posts={data.allMarkdownRemark.edges} />
     </div>

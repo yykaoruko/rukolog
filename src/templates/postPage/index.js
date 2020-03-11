@@ -9,7 +9,7 @@ import { formatDate } from "../../helpers/date"
 
 const PostPage = ({ data }) => (
   <Layout>
-    <SEO title="Post" />
+    <SEO title={data.markdownRemark.frontmatter.title} />
     <div>
       <div className={Styles.post}>
         <div className={Styles.post__wrap}>
