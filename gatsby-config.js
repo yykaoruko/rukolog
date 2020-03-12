@@ -3,6 +3,8 @@ module.exports = {
     title: `Rukolog`,
     description: `Frontend developer's blog.`,
     author: `@yykaoruko`,
+    image: `/images/OGP.png`,
+    url: `https://rukolog.netlify.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
