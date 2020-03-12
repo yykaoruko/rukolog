@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
     <>
       <Helmet>
         <link
-          href="https://fonts.googleapis.com/css?family=Reenie+Beanie|Sawarabi+Gothic|Noto+Sans+JP&display=swap"
+          href="https://fonts.googleapis.com/css?family=Reenie+Beanie&display=swap"
           rel="stylesheet"
         />
       </Helmet>
