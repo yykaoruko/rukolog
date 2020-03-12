@@ -13,7 +13,7 @@ import "../../styles/global.scss"
 import Styles from "./index.module.scss"
 
 import Header from "../header"
-import Footer from "../Footer"
+import Footer from "../footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
