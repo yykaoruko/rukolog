@@ -31,13 +31,16 @@
   transition: max-height 0.4s;
   ul {
     margin: 0;
-    padding: 0;
-    list-style-type: none;
+    padding: 0 0 0 16px;
+    list-style-type: decimal;
   }
   li {
     margin: 0;
     padding: 4px 0;
-    font-size: 0.9em;
+    font-size: 0.9rem;
+    p {
+      margin: 0 auto;
+    }
   }
   a {
     display: block;

@@ -56,7 +56,7 @@ export const pageQuery = graphql`
         description
       }
       html
-      tableOfContents(absolute: false, maxDepth: 1)
+      tableOfContents(absolute: false, maxDepth: 3)
     }
   }
 `
