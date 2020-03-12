@@ -9,7 +9,10 @@ import { formatDate } from "../../helpers/date"
 
 const PostPage = ({ data }) => (
   <Layout>
-    <SEO title={data.markdownRemark.frontmatter.title} />
+    <SEO
+      description={data.markdownRemark.frontmatter.description}
+      title={data.markdownRemark.frontmatter.title}
+    />
     <div>
       <div className={Styles.post}>
         <div className={Styles.post__wrap}>
@@ -50,6 +53,7 @@ export const pageQuery = graphql`
         date
         tags
         slug
+        description
       }
       html
       tableOfContents(absolute: false, maxDepth: 1)
