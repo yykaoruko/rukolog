@@ -27,7 +27,7 @@ jobs:
       with:
         repository: yykaoruko/my-log
         token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
-        path: app/contents/logs
+        path: contents/logs
 
     - name: Git commit
       run: |
