@@ -1,42 +1,21 @@
 @import "../../styles/variables";
 
 .table {
-  padding: 16px;
-  background: #f7f9f9;
-}
-
-.table__heading {
-  font-size: 1rem;
-  padding: 0 4px;
-  margin: 0 auto ;
-}
-
-
-.table__heading__button {
-  margin: 0 0 0 8px;
-  border: none;
-  background: none;
-  &:hover {
-    cursor: pointer;
-  }
-  &:focus {
-    outline-width: 2px;
-    outline-color: $color-sub;
-  }
+  margin: 0 24px;
 }
 
 .table__content__open {
-  margin: 8px 0 0;
+  margin: 0 auto;
   max-height: 1000px;
   transition: max-height 0.4s;
   ul {
-    margin: 0;
+    margin: 0 8px;
     padding: 0 0 0 16px;
     list-style-type: decimal;
   }
   li {
     margin: 0;
-    padding: 4px 0;
+    padding: 2px 0;
     font-size: 0.9rem;
     p {
       margin: 0 auto;
@@ -44,9 +23,8 @@
   }
   a {
     display: block;
-    padding: 4px;
-    border-bottom: 1px solid $color-border;
-    color: $color-font-dark;
+    color: $color-sub;
+    font-size: 0.9rem;
     &:hover {
       text-decoration: none;
     }

@@ -2,12 +2,14 @@
 
 .posts__post {
   margin: 0 auto 24px;
-  padding: 0 0 16px;
-  border-bottom: 1px solid $color-border;
+  padding: 36px 36px 28px;
+  border-radius: 8px;
+  background: $color-highlight;
+  box-shadow: 0px 0px 24px #ecdfd1
 }
 
 .posts__post__heading {
-  margin: 0 auto 20px;
+  margin: 0 auto 4px;
   color: $color-font-dark;
   font-size: 1.2rem;
   a {
@@ -23,24 +25,33 @@
 .posts__post__description {
   margin: 0 auto 16px;
   color: $color-font-dark;
+  font-size: 0.9rem;
 }
 
 .posts__post__date {
-  margin: 0 8px 8px 0;
+  margin: 0 auto 16px;
   color: $color-font-light;
   font-size: 0.9rem;
 }
 
 .posts__post__tags {
-  display: inline-flex;
+  display: flex;
   margin: 0 auto 8px;
   padding: 0;
   flex-wrap: wrap;
 }
 
 .posts__post__tags__tag {
-  margin: 0 4px 0;
+  margin: 0 8px 0 0;
+  border-radius: 2px;
   color: $color-sub;
   font-size: 0.9rem;
   list-style-type: none;
+  a {
+    color: currentColor;
+    &:hover {
+      color: currentColor;
+      text-decoration: none;
+    }
+  }
 }

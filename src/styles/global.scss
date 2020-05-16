@@ -2,7 +2,11 @@
 @import './variables';
 
 html {
-  background: $color-white;
+  background: $color-light;
+  -webkit-font-smoothing: antialiased;
+  font-kerning: auto;
+  font-variant-ligatures: none;
+  font-family: -apple-system-body,BlinkMacSystemFont,Helvetica Neue,Helvetica Sans,Hiragino Kaku Gothic ProN,"Noto Sans Japanese","游ゴシック  Medium","Yu Gothic Medium","メイリオ",meiryo,sans-serif;
 }
 
 body {

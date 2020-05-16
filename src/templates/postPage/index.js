@@ -2,10 +2,11 @@ import React from "react"
 
 import { Link, graphql } from "gatsby"
 import Layout from "../../components/layout"
-import TableOfContents from "../../components/tableOfContents"
 import SEO from "../../components/seo"
 import Styles from "./index.module.scss"
 import { formatDate } from "../../helpers/date"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faClock } from "@fortawesome/free-solid-svg-icons"
 
 const PostPage = ({ data }) => (
   <Layout>
@@ -19,9 +20,9 @@ const PostPage = ({ data }) => (
           <h1 className={Styles.post__wrap__heading}>
             {data.markdownRemark.frontmatter.title}
           </h1>
-          <time className={Styles.post__wrap__date}>
-            {formatDate(data.markdownRemark.frontmatter.date)}
-          </time>
+          <p className={Styles.post__wrap__date}>
+            <FontAwesomeIcon icon={faClock} /> {formatDate(data.markdownRemark.frontmatter.date)}
+          </p>
           <ul className={Styles.post__wrap__tags}>
             {data.markdownRemark.frontmatter.tags.map(tag => (
               <li key={tag} className={Styles.post__wrap__tags__tag}>
@@ -32,7 +33,6 @@ const PostPage = ({ data }) => (
         </div>
       </div>
       <div className={Styles.wrap}>
-        <TableOfContents contents={data.markdownRemark.tableOfContents} />
         <div
           className={Styles.markdown}
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}

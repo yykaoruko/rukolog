@@ -21,4 +21,7 @@
   margin: 0 4px;
   padding: 4px;
   color: $color-main;
+  &:hover {
+    color: $color-sub;
+  }
 }
