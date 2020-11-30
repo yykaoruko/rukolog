@@ -55,17 +55,18 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Reenie Beanie`,
-            text: `(Rukolog)`,
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Reenie Beanie`,
+    //         text: `(Rukolog)`,
+    //       },
+    //     ],
+    //     display: 'swap',
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
