@@ -1,5 +1,6 @@
 const dayjs = require("dayjs")
 
 export const formatDate = str => {
-  return dayjs(str).format("YYYY-MM-DD")
+  const dateStr = str.replace(/\sUTC/g, '');
+  return dayjs(dateStr).format("YYYY-MM-DD")
 }
