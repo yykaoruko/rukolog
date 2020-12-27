@@ -5,8 +5,6 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import Styles from "./index.module.scss"
 import { formatDate } from "../../helpers/date"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faClock } from "@fortawesome/free-solid-svg-icons"
 
 const PostPage = ({ data }) => (
   <Layout>
@@ -21,12 +19,12 @@ const PostPage = ({ data }) => (
             {data.markdownRemark.frontmatter.title}
           </h1>
           <p className={Styles.post__wrap__date}>
-            <FontAwesomeIcon icon={faClock} /> {formatDate(data.markdownRemark.frontmatter.date)}
+            {formatDate(data.markdownRemark.frontmatter.date)}
           </p>
           <ul className={Styles.post__wrap__tags}>
             {data.markdownRemark.frontmatter.tags.map(tag => (
               <li key={tag} className={Styles.post__wrap__tags__tag}>
-                <Link to={`/tags/${tag}`}>#{tag}</Link>
+                <Link to={`/tags/${tag}`}>{tag}</Link>
               </li>
             ))}
           </ul>
@@ -37,7 +35,7 @@ const PostPage = ({ data }) => (
           className={Styles.markdown}
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
         />
-        <Link to="/">Back to main page</Link>
+        <Link className={Styles.post__back} to="/">記事一覧に戻る</Link>
       </div>
     </div>
   </Layout>

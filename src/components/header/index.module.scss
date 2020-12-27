@@ -1,22 +1,19 @@
 @import '../../styles/variables';
 
 .header {
-  display: none;
-  padding: 16px;
+  padding: 16px 32px;
 }
 
 .header__heading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: $color-main;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+  width: 100%;
+  max-width: 696px;
+  margin: auto;
   a {
-    color: $color-white;
-    font-family: 'Reenie Beanie', cursive;
+    color: $color-text;
+    font-family: 'Reenie Beanie';
+    text-decoration: none;
     font-size: 2rem;
+    font-weight: 700;
     text-align: center;
     &:hover {
       text-decoration: none;
@@ -25,6 +22,7 @@
 }
 
 .header__text {
-  color: $color-white;
+  display: none;
+  color: $color-text;
   font-size: 1rem;
 }

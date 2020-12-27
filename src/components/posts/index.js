@@ -3,8 +3,6 @@ import PropTypes from "prop-types"
 import React from "react"
 import Styles from "./index.module.scss"
 import { formatDate } from "../../helpers/date"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faClock } from "@fortawesome/free-solid-svg-icons"
 
 const Posts = ({ posts }) => (
   <div className={Styles.posts}>
@@ -16,7 +14,7 @@ const Posts = ({ posts }) => (
           </Link>
         </h1>
         <p className={Styles.posts__post__date}>
-          <FontAwesomeIcon icon={faClock} /> {formatDate(node.frontmatter.date)}
+          {formatDate(node.frontmatter.date)}
         </p>
         <p className={Styles.posts__post__description}>
           {node.frontmatter.description}
@@ -24,7 +22,7 @@ const Posts = ({ posts }) => (
         <ul className={Styles.posts__post__tags}>
           {node.frontmatter.tags.map(tag => (
             <li key={tag} className={Styles.posts__post__tags__tag}>
-              <Link to={`/tags/${tag}`}>#{tag}</Link>
+              <Link to={`/tags/${tag}`}>{tag}</Link>
             </li>
           ))}
         </ul>

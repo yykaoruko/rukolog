@@ -1,22 +1,30 @@
 @import "../../styles/variables";
 
 .posts__post {
+  position: relative;
   margin: 0 auto 24px;
-  padding: 36px 36px 28px;
-  border-radius: 8px;
-  background: $color-highlight;
-  box-shadow: 0px 0px 24px #ecdfd1
+  padding: 28px 36px 36px;
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '((';
+    font-size: 1.6rem;
+    font-family: 'Reenie Beanie';
+    transform: rotate(-20deg);
+  }
 }
 
 .posts__post__heading {
   margin: 0 auto 4px;
-  color: $color-font-dark;
+  color: $color-text;
   font-size: 1.2rem;
   a {
+    text-decoration: none;
     color: currentColor;
     transition: color 0.4s;
     &:hover {
-      color: $color-sub;
+      color: $color-main;
       text-decoration: none;
     }
   }
@@ -24,14 +32,15 @@
 
 .posts__post__description {
   margin: 0 auto 16px;
-  color: $color-font-dark;
+  color: $color-text;
   font-size: 0.9rem;
 }
 
 .posts__post__date {
   margin: 0 auto 16px;
-  color: $color-font-light;
-  font-size: 0.9rem;
+  color: $color-text;
+  font-size: 0.7rem;
+  font-weight: bold;
 }
 
 .posts__post__tags {
@@ -42,13 +51,16 @@
 }
 
 .posts__post__tags__tag {
-  margin: 0 8px 0 0;
+  margin: 0 4px 4px 0;
+  padding: 0px 8px;
   border-radius: 2px;
-  color: $color-sub;
+  background: $color-main;
+  color: $color-light;
   font-size: 0.9rem;
   list-style-type: none;
   a {
     color: currentColor;
+    text-decoration: none;
     &:hover {
       color: currentColor;
       text-decoration: none;

@@ -8,4 +8,3 @@
 
 import "./src/styles/global.scss"
 import "./src/styles/prism-theme.css"
-import "@fortawesome/fontawesome-svg-core/styles.css";

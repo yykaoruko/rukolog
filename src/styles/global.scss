@@ -1,4 +1,5 @@
 @import 'bootstrap/dist/css/bootstrap-reboot';
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
 @import './variables';
 
 html {
@@ -11,13 +12,14 @@ html {
 
 body {
   background: none;
-  color: $color-font-dark;
+  color: $color-text;
 }
 
 a {
-  color: $color-sub;
+  color: $color-text;
+  text-decoration: underline;
   transition: color 0.2s;
   &:hover {
-    color: $color-font-dark;
+    color: $color-main;
   }
 }

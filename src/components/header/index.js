@@ -7,7 +7,7 @@ const Header = ({ siteTitle }) => (
   <header className={Styles.header}>
     <h1 className={Styles.header__heading}>
       <Link className={Styles.className__heading__link} to="/">
-        {siteTitle}
+        {siteTitle + '.'}
       </Link>
     </h1>
     <p className={Styles.header__text}>Frontend developer's blog</p>

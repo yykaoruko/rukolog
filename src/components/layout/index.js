@@ -14,9 +14,6 @@ import Styles from "./index.module.scss"
 import Header from "../header"
 import Footer from "../footer"
 
-import { config } from "@fortawesome/fontawesome-svg-core"
-config.autoAddCss = false;
-
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
